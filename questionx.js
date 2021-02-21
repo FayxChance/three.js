@@ -60,12 +60,11 @@ export function init() {
     mars.position.set(0, 0, 0);
 
     // Cube phong material
-    var mat = new THREE.MeshPhongMaterial({
-        color: 0x0303ff,
-        specular: 0xffffff
-    });
+    var mapDirtUrl = "images/dirt.jpg";
+    var mapDirt = new THREE.TextureLoader().load(mapDirtUrl);
+    var matDirt = new THREE.MeshPhongMaterial({map: mapDirt});
     var geo = new THREE.BoxGeometry(1, 1, 1);
-    ovni = new THREE.Mesh(geo, mat);
+    ovni = new THREE.Mesh(geo, matDirt);
     ovni.position.set(2, 1, 2);
 
     // First group
