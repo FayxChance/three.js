@@ -9,8 +9,8 @@ app.use(express.static('.'));
 app.get('/', (req, res)=> {
     res.redirect('index.html');
 });
-const question = 4;
-for (let index = 1; index < question + 1; index++) {
+const question = 7;
+for (let index = 0; index < question + 1; index++) {
     app.get('/question'+index, (req, res)=> {
         res.redirect('question'+index+'.html');
     });
